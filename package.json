@@ -2,14 +2,21 @@
   "name": "website-workspace-skeleton",
   "version": "1.0.0",
   "description": "Empty barebone website to do various poc",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && lite-server",
+    "build": "tsc && npm run copy:files", 
+    "copy:files": "copyfiles -u 1  src/**/*.html src/**/*.css dist/"
   },
   "author": "Arnab Das",
   "license": "ISC",
+
   "devDependencies": {
+    "copyfiles": "^2.2.0",
     "lite-server": "^2.5.4",
     "typescript": "^3.9.3"
+  },
+
+  "dependencies": {
+    "rxjs": "^6.5.5"
   }
 }
